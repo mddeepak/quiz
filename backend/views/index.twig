@@ -1,0 +1,86 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <!-- content -->
+<body>
+  <div id="content" class="app-content" role="main">
+    <!-- stats -->
+      <div class="col-md-12">
+        <div class="row row-sm text-center">
+          <div class="col-xs-3">
+            <div class="panel padder-v item">
+              <div class="h1 text-info font-thin h1">521</div>
+              <span class="text-muted text-xs">New Events</span>
+              <div class="top text-right w-full">
+                <i class="fa fa-caret-down text-warning m-r-sm"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <a href class="block panel padder-v bg-primary item">
+              <span class="text-white font-thin h1 block">930</span>
+              <span class="text-muted text-xs">Talents</span>
+              <span class="bottom text-right w-full">
+                  <i class="fa fa-cloud-upload text-muted m-r-sm"></i>
+                </span>
+            </a>
+          </div>
+          <div class="col-xs-3">
+            <a href class="block panel padder-v bg-info item">
+              <span class="text-white font-thin h1 block">432</span>
+              <span class="text-muted text-xs">Users</span>
+              <span class="top">
+                  <i class="fa fa-caret-up text-warning m-l-sm m-r-sm"></i>
+                </span>
+            </a>
+          </div>
+          <div class="col-xs-3">
+            <div class="panel padder-v item">
+              <div class="font-thin h1">129</div>
+              <span class="text-muted text-xs">Feeds</span>
+              <div class="bottom">
+                <i class="fa fa-caret-up text-warning m-l-sm m-r-sm"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+    <!-- / stats -->
+
+    <div class="wrapper-md">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Total Test
+        </div>
+        <div class="table-responsive">
+          <table ui-jq="dataTable" ui-options="{
+          sAjaxSource: '/assets/api/datatable.json',
+          aoColumns: [
+            { mData: 'engine' },
+            { mData: 'browser' },
+            { mData: 'platform' },
+            { mData: 'version' },
+            { mData: 'grade' }
+          ]
+        }" class="table table-striped b-t b-b">
+            <thead>
+            <tr>
+              <th  style="width:20%">Test Name</th>
+              <th  style="width:25%">Score(Percentage)</th>
+              <th  style="width:25%">User Name</th>
+              <th  style="width:15%">Status</th>
+              <th  style="width:15%">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- /content -->
+</body>
+{% endblock %}
